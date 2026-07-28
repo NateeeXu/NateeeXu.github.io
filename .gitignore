@@ -1,4 +1,6 @@
 .next/
+dist/
+out/
 node_modules/
 .cache/
 .DS_Store

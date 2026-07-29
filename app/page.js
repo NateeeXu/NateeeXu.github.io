@@ -216,7 +216,7 @@ export default function Home() {
           </div>
         </div>
         <figure className="hero-portrait">
-          <img src="/nate-portrait.jpg" alt="Portrait of Nate Xu" />
+          <img src="/nate-portrait.jpg" alt="Portrait of Nate Xu" fetchPriority="high" />
           <figcaption>
             <span>NATE XU / 徐显策</span>
             <span>EE · IC · FPGA · AI</span>
@@ -304,13 +304,13 @@ export default function Home() {
           </div>
           <div className="phone-stack" aria-label="EasySublet interface screenshots">
             <figure className="phone phone-a">
-              <img src="/easy-detail.png" alt="EasySublet listing detail interface" />
+              <img src="/easy-detail.png" alt="EasySublet listing detail interface" loading="lazy" decoding="async" />
             </figure>
             <figure className="phone phone-b">
-              <img src="/easy-chat.png" alt="EasySublet in-app conversation list" />
+              <img src="/easy-chat.png" alt="EasySublet in-app conversation list" loading="lazy" decoding="async" />
             </figure>
             <figure className="phone phone-c">
-              <img src="/easy-publish.png" alt="EasySublet listing publishing flow" />
+              <img src="/easy-publish.png" alt="EasySublet listing publishing flow" loading="lazy" decoding="async" />
             </figure>
           </div>
           <div className="sublet-engineering">
@@ -455,7 +455,7 @@ export default function Home() {
       <section className="silicon section" id="silicon">
         <div className="silicon-sticky">
           <div className="silicon-image">
-            <img src="/silicon-dies.jpg" alt="Silicon dies from Nate Xu's IC design work" />
+            <img src="/silicon-dies.jpg" alt="Silicon dies from Nate Xu's IC design work" loading="lazy" decoding="async" />
             <div className="die-marker marker-a"><span>PEX</span></div>
             <div className="die-marker marker-b"><span>LVS</span></div>
             <div className="die-marker marker-c"><span>DRC</span></div>
@@ -485,7 +485,7 @@ export default function Home() {
 
       <section className="berkeley section" id="berkeley">
         <div className="berkeley-photo">
-          <img src="/berkeley.jpg" alt="Nate Xu at UC Berkeley with the Campanile behind him" />
+          <img src="/berkeley.jpg" alt="Nate Xu at UC Berkeley with the Campanile behind him" loading="lazy" decoding="async" />
           <div className="berkeley-stamp">
             <span>37.8715° N</span>
             <strong>CAL</strong>
@@ -558,11 +558,11 @@ export default function Home() {
         </div>
         <div className="field-notes">
           <figure className="field-main">
-            <img src="/field-sky.jpg" alt="Nate Xu in a wide mountain landscape" />
+            <img src="/field-sky.jpg" alt="Nate Xu in a wide mountain landscape" loading="lazy" decoding="async" />
             <figcaption>FIELD NOTE / STAY CURIOUS</figcaption>
           </figure>
           <figure className="field-small">
-            <img src="/city.jpg" alt="Nate Xu exploring a city street" />
+            <img src="/city.jpg" alt="Nate Xu exploring a city street" loading="lazy" decoding="async" />
             <figcaption>SIGNAL EXISTS EVERYWHERE</figcaption>
           </figure>
         </div>

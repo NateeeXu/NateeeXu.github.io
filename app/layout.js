@@ -1,14 +1,30 @@
 import "./globals.css";
 
+export const viewport = {
+  themeColor: "#fbfaf5",
+  colorScheme: "light",
+};
+
 export const metadata = {
-  title: "Nate Xu — Signal Path",
+  metadataBase: new URL("https://nate-xu-signal-path.natecece.chatgpt.site"),
+  icons: {
+    icon: "/favicon.svg",
+  },
+  title: "Nate Xu — IC Designer & Web Product Builder",
   description:
-    "Integrated circuit designer, FPGA builder, and product maker working from devices to systems.",
+    "Nate Xu builds across integrated circuits, FPGA systems, and web products—from transistor-level design to shipped software.",
   openGraph: {
-    title: "Nate Xu — Signal Path",
+    title: "Nate Xu — IC Designer & Web Product Builder",
     description:
-      "From transistor-level circuits to FPGA systems and AI-native products.",
+      "From transistor-level circuits to FPGA systems and working web products.",
     type: "website",
+    images: ["/nate-portrait.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nate Xu — IC Designer & Web Product Builder",
+    description: "Integrated circuits, FPGA systems, and web products.",
+    images: ["/nate-portrait.jpg"],
   },
 };
 

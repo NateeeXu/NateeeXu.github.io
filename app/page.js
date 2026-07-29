@@ -1,24 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const copy = {
   en: {
-    nav: ["Web / Work", "Silicon", "Berkeley", "About"],
-    status: "IC design · web engineering · hardware systems",
-    kicker: "DEVICE → CIRCUIT → ARCHITECTURE → SYSTEM → PRODUCT",
-    heroA: "I design silicon.",
-    heroB: "I ship software.",
+    nav: ["Selected work", "Silicon", "Berkeley", "About"],
+    status: "Integrated circuits · web products · hardware systems",
+    kicker: "From device physics to products people can use",
+    heroA: "I design chips.",
+    heroB: "I ship web products.",
     heroBody:
-      "I’m Nate Xu — an integrated-circuit designer and web product builder. From transistor sizing to interaction states, I care about the hard part: making the whole system work.",
-    explore: "Trace the signal",
+      "I’m Nate Xu, an IC designer and product-minded web developer. I work across devices, circuits, FPGA systems, and software—and I like owning the difficult path from first idea to a working result.",
+    explore: "View selected work",
     resume: "Résumé",
     layerEyebrow: "01 / CROSS-LAYER PRACTICE",
-    layerTitle: "One chain. Five scales.",
+    layerTitle: "One engineer, five layers.",
     layerBody:
       "My work moves in both directions: from device physics up to human-facing products, and from real-world failures back down to root causes.",
     workEyebrow: "02 / SELECTED WORK",
-    workTitle: "Interfaces backed by systems.",
+    workTitle: "Products I built, not just mocked up.",
     siliconEyebrow: "03 / SILICON",
     siliconTitle: "From schematic to something you can hold.",
     siliconBody:
@@ -33,13 +33,13 @@ const copy = {
     aboutTitle: "Curiosity travels.",
     aboutBody:
       "Before hardware and product work, I led a university media team and built a 10k-follower creator account. That background still shapes how I explain technical systems: find the signal, remove the noise, make the story legible.",
-    footerTitle: "Let’s build the full stack — all the way down.",
+    footerTitle: "Have an ambitious system to build? Let’s talk.",
     footerBody:
       "Incoming M.S. in Electrical Engineering at Northwestern University · 2026",
     language: "中文",
   },
   zh: {
-    nav: ["Web / 项目", "芯片", "伯克利", "关于"],
+    nav: ["代表项目", "芯片", "伯克利", "关于"],
     status: "IC 设计 · Web 工程 · 硬件系统",
     kicker: "器件 → 电路 → 架构 → 系统 → 产品",
     heroA: "我设计芯片。",
@@ -143,48 +143,11 @@ function ArrowIcon() {
   );
 }
 
-function SignalTrace({ progress }) {
-  return (
-    <div className="signal-trace" aria-hidden="true">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path className="trace-base" d="M50 0V13H68V26H35V39H58V52H42V65H72V78H50V100" />
-        <path
-          className="trace-live"
-          style={{ strokeDashoffset: 100 - progress * 100 }}
-          pathLength="100"
-          d="M50 0V13H68V26H35V39H58V52H42V65H72V78H50V100"
-        />
-      </svg>
-      <span className="trace-label">SIGNAL PATH</span>
-    </div>
-  );
-}
-
 export default function Home() {
   const [lang, setLang] = useState("en");
-  const [progress, setProgress] = useState(0);
   const [activeLayer, setActiveLayer] = useState(2);
   const heroRef = useRef(null);
   const t = copy[lang];
-
-  useEffect(() => {
-    let ticking = false;
-    const update = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const next = max > 0 ? window.scrollY / max : 0;
-      setProgress(Math.min(1, Math.max(0, next)));
-      ticking = false;
-    };
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(update);
-        ticking = true;
-      }
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const moveGlow = (event) => {
     if (!heroRef.current) return;
@@ -194,12 +157,12 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <SignalTrace progress={progress} />
+    <main id="main-content">
+      <a className="skip-link" href="#work">Skip to selected work</a>
 
       <header className="site-header">
         <a className="monogram" href="#top" aria-label="Nate Xu home">
-          NX<span>·26</span>
+          NX<span>Nate Xu</span>
         </a>
         <nav aria-label="Primary navigation">
           {["work", "silicon", "berkeley", "about"].map((id, index) => (
@@ -238,13 +201,18 @@ export default function Home() {
           <div className="hero-bottom">
             <p>{t.heroBody}</p>
             <div className="hero-actions">
-              <a className="button primary" href="#layers">
+              <a className="button primary" href="#work">
                 {t.explore} <ArrowIcon />
               </a>
               <a className="button ghost" href="/Nate_CV2026.07.pdf" target="_blank">
                 {t.resume}
               </a>
             </div>
+          </div>
+          <div className="hero-facts" aria-label="Selected outcomes">
+            <article><strong>95 MHz</strong><span>Five-stage RISC-V CPU on FPGA</span></article>
+            <article><strong>19 tests</strong><span>EasySublet automated product coverage</span></article>
+            <article><strong>110 nm</strong><span>Analog IC schematic-to-layout flow</span></article>
           </div>
         </div>
         <figure className="hero-portrait">
@@ -314,8 +282,8 @@ export default function Home() {
             <p className="project-number">PROJECT / 01</p>
             <h3>EasySublet</h3>
             <p className="project-lede">
-              A campus-first mini program that turns fragmented housing information
-              into a coherent, trustworthy web product.
+              A campus housing product I took from problem framing to working
+              frontend, CloudBase services, data model, testing, and deployment.
             </p>
             <div className="project-metrics">
               <span><b>4</b> campuses</span>
@@ -323,14 +291,16 @@ export default function Home() {
               <span><b>9</b> business subpackages</span>
             </div>
             <p className="project-detail">
-              As the initiator and sole product-and-engineering owner, I shaped the
-              problem, PRD, information architecture, interaction design, frontend,
-              data model, CloudBase backend direction, safety boundaries, and
-              implementation — not a mockup, but an evolving product system.
+              I initiated the product and owned its PRD, information architecture,
+              interaction design, JavaScript implementation, cloud boundaries, and
+              quality system. The result is a working product—not a portfolio mockup.
             </p>
-            <a className="text-link" href="https://easysublet.netlify.app/" target="_blank" rel="noreferrer">
-              Open web prototype <ArrowIcon />
-            </a>
+            <div className="prototype-access">
+              <a className="text-link" href="https://zhuanzuproj.netlify.app/" target="_blank" rel="noreferrer">
+                Open browser demo <ArrowIcon />
+              </a>
+              <p><span>Demo password</span><code>wagoneer2026</code></p>
+            </div>
           </div>
           <div className="phone-stack" aria-label="EasySublet interface screenshots">
             <figure className="phone phone-a">
@@ -346,37 +316,76 @@ export default function Home() {
           <div className="sublet-engineering">
             <div className="sublet-engineering-head">
               <div>
-                <p className="project-number">WEB ENGINEERING / PRODUCT DESIGN</p>
-                <h4>Designed in layers.<br />Built end to end.</h4>
+                <p className="project-number">WEB PRODUCT ENGINEERING</p>
+                <h4>Every screen has<br />an engineering reason.</h4>
               </div>
               <p>
-                Every interface decision connects to a service boundary, a data model,
-                or a trust rule. The architecture is intentionally legible from the
-                user action down to the cloud function.
+                The strongest part of EasySublet is not a single screen. It is the
+                connection between user flow, reusable frontend logic, cloud functions,
+                data structure, and trust rules.
               </p>
+            </div>
+            <div className="build-comparison" aria-label="EasySublet browser demo and native WeChat build comparison">
+              <div className="comparison-lede">
+                <div>
+                  <p className="project-number">DEMO / NATIVE BUILD</p>
+                  <h5>Same product story.<br />Different runtime.</h5>
+                </div>
+                <p>
+                  The browser demo makes the product easy to review. The native WeChat
+                  build carries the platform, backend, identity, and privacy boundaries.
+                </p>
+              </div>
+              <div className="comparison-table" role="table">
+                <div className="comparison-row comparison-head" role="row">
+                  <span role="columnheader">Difference</span>
+                  <strong role="columnheader">Browser demo</strong>
+                  <strong role="columnheader">Native WeChat build</strong>
+                </div>
+                <div className="comparison-row" role="row">
+                  <span role="rowheader">Runtime</span>
+                  <p role="cell" data-label="Browser demo">Static mobile-first web app that opens on any device.</p>
+                  <p role="cell" data-label="Native build">Native WXML, WXSS, and JavaScript Mini Program.</p>
+                </div>
+                <div className="comparison-row" role="row">
+                  <span role="rowheader">Data & identity</span>
+                  <p role="cell" data-label="Browser demo">Browser-local demo data and a local experience account.</p>
+                  <p role="cell" data-label="Native build">WeChat identity plus service and CloudBase cloud-function boundaries.</p>
+                </div>
+                <div className="comparison-row" role="row">
+                  <span role="rowheader">Platform depth</span>
+                  <p role="cell" data-label="Browser demo">Best for reviewing search, detail, publish, favorites, profile, and chat flows.</p>
+                  <p role="cell" data-label="Native build">Adds WeChat sharing, media, notifications, ownership checks, and server-controlled contact exchange.</p>
+                </div>
+                <div className="comparison-row" role="row">
+                  <span role="rowheader">Current status</span>
+                  <p role="cell" data-label="Browser demo">Shareable and password-gated on Netlify.</p>
+                  <p role="cell" data-label="Native build">Core implementation is complete; CloudBase rollout and real-device acceptance are in progress.</p>
+                </div>
+              </div>
             </div>
             <div className="web-architecture">
               <div className="architecture-layer layer-ui">
                 <span>01 / EXPERIENCE</span>
-                <strong>WXML · WXSS · RESPONSIVE UI</strong>
+                <strong>WXML, WXSS and responsive UI</strong>
                 <p>Search, filters, favorites, detail, publish, profile, campus life.</p>
               </div>
               <div className="architecture-connector" aria-hidden="true"><i /><i /><i /></div>
               <div className="architecture-layer layer-app">
                 <span>02 / APPLICATION</span>
-                <strong>JAVASCRIPT · SERVICE LAYER</strong>
+                <strong>JavaScript and service layer</strong>
                 <p>Shared components, form state, validation, domain actions, environment isolation.</p>
               </div>
               <div className="architecture-connector" aria-hidden="true"><i /><i /><i /></div>
               <div className="architecture-layer layer-cloud">
                 <span>03 / CLOUD</span>
-                <strong>CLOUDBASE · NODE.JS · FUNCTIONS</strong>
+                <strong>CloudBase, Node.js and functions</strong>
                 <p>Field whitelists, serverless operations, migration preflight, media and identity direction.</p>
               </div>
               <div className="architecture-connector" aria-hidden="true"><i /><i /><i /></div>
               <div className="architecture-layer layer-data">
                 <span>04 / DATA</span>
-                <strong>USERS · LISTINGS · WANTED · CHATS</strong>
+                <strong>Users, listings, wanted posts and chats</strong>
                 <p>Campus-aware schemas, apartment aliases, shuttle links, conversations and messages.</p>
               </div>
             </div>
@@ -427,8 +436,8 @@ export default function Home() {
             <p className="project-number">PROJECT / 02</p>
             <h3>AI Builders Digest</h3>
             <p className="project-lede">
-              An automated Chinese intelligence pipeline for people building with AI —
-              not merely following the hype.
+              A Chinese daily briefing pipeline that collects builder signals,
+              summarizes them with context, and delivers a useful digest every morning.
             </p>
             <p className="project-detail">
               A decoupled prepare → summarize → deliver workflow gathers feeds,
@@ -544,7 +553,7 @@ export default function Home() {
           <ul>
             <li><span>2025</span> UC Berkeley exchange</li>
             <li><span>2026</span> B.S. Electronic Science & Technology</li>
-            <li><span>2026</span> Northwestern University · incoming M.S.</li>
+            <li><span>2026</span> Northwestern University · incoming&nbsp;M.S.</li>
           </ul>
         </div>
         <div className="field-notes">
@@ -572,7 +581,7 @@ export default function Home() {
         </div>
         <div className="footer-bottom">
           <span>© 2026 NATE XU</span>
-          <span>DESIGNED AS A SIGNAL PATH</span>
+          <span>BUILT ACROSS SILICON AND SOFTWARE</span>
           <a href="#top">BACK TO TOP ↑</a>
         </div>
       </footer>

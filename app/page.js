@@ -304,15 +304,15 @@ export default function Home() {
           </div>
           <div className="phone-stack" aria-label="EasySublet interface screenshots">
             <figure className="phone phone-b">
-              <img src="/easy-chat.png" alt="EasySublet in-app conversation list" loading="lazy" decoding="async" />
+              <img src="/easy-chat.png" width="430" height="980" alt="EasySublet in-app conversation list" loading="lazy" decoding="async" />
               <figcaption><span>01</span> Trusted chat</figcaption>
             </figure>
             <figure className="phone phone-a">
-              <img src="/easy-detail.png" alt="EasySublet listing detail interface" loading="lazy" decoding="async" />
+              <img src="/easy-detail.png" width="430" height="980" alt="EasySublet listing detail interface" loading="lazy" decoding="async" />
               <figcaption><span>02</span> Listing detail</figcaption>
             </figure>
             <figure className="phone phone-c">
-              <img src="/easy-publish.png" alt="EasySublet listing publishing flow" loading="lazy" decoding="async" />
+              <img src="/easy-publish.png" width="430" height="1200" alt="EasySublet listing publishing flow" loading="lazy" decoding="async" />
               <figcaption><span>03</span> Publish flow</figcaption>
             </figure>
           </div>

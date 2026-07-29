@@ -2380,49 +2380,119 @@ button:focus-visible {
 }
 
 .phone-stack {
-  min-height: 690px;
+  min-height: 680px;
+  padding: 5.8rem clamp(1.5rem, 4vw, 4rem) 3.2rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.08fr 0.9fr;
+  align-items: center;
+  justify-items: center;
+  gap: clamp(0.9rem, 2.4vw, 2.4rem);
   overflow: hidden;
-  border-radius: 30px;
+  isolation: isolate;
+  border: 1px solid rgba(62, 84, 70, 0.1);
+  border-radius: 38px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(223, 233, 223, 0.8)),
+    radial-gradient(circle at 52% 25%, rgba(255, 255, 255, 0.96) 0 14%, transparent 44%),
+    linear-gradient(135deg, rgba(248, 251, 247, 0.94), rgba(218, 232, 221, 0.82)),
     var(--sage);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    0 30px 80px rgba(75, 93, 79, 0.08);
+}
+
+.phone-stack::before,
+.phone-stack::after {
+  position: absolute;
+  top: 2rem;
+  z-index: 4;
+  color: rgba(31, 57, 46, 0.64);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.phone-stack::before {
+  left: 2rem;
+  content: "EasySublet / interface system";
+}
+
+.phone-stack::after {
+  right: 2rem;
+  content: "Search · trust · publish · chat";
 }
 
 .phone {
-  width: 36%;
-  border: 5px solid white;
+  position: relative;
+  inset: auto;
+  width: min(100%, 18rem);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transform-origin: 50% 85%;
+}
+
+.phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: 5px solid rgba(255, 255, 255, 0.94);
   border-radius: 25px;
-  box-shadow: 0 28px 70px rgba(43, 63, 52, 0.18);
+  box-shadow:
+    0 24px 55px rgba(38, 59, 48, 0.16),
+    0 5px 14px rgba(38, 59, 48, 0.08);
+}
+
+.phone figcaption {
+  margin: 1rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.phone figcaption span {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
 }
 
 .phone-a {
-  top: 8%;
-  left: 32%;
-  transform: rotate(-2deg);
+  z-index: 3;
+  grid-column: 2;
+  grid-row: 1;
+  transform: translateY(-0.8rem);
 }
 
 .phone-b {
-  top: 19%;
-  left: 5%;
-  transform: rotate(-6deg);
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  width: min(92%, 16rem);
+  transform: rotate(-2.5deg) translateY(2rem);
 }
 
 .phone-c {
-  top: 16%;
-  right: 4%;
-  transform: rotate(5deg);
+  z-index: 2;
+  grid-column: 3;
+  grid-row: 1;
+  width: min(78%, 14rem);
+  transform: rotate(2.5deg) translateY(2.4rem);
 }
 
 .phone-stack:hover .phone-a {
-  transform: rotate(0) translateY(-9px);
+  transform: translateY(-1.25rem);
 }
 
 .phone-stack:hover .phone-b {
-  transform: rotate(-7deg) translate(-8px, 6px);
+  transform: rotate(-1.5deg) translate(-0.25rem, 1.7rem);
 }
 
 .phone-stack:hover .phone-c {
-  transform: rotate(6deg) translate(8px, 6px);
+  transform: rotate(1.5deg) translate(0.25rem, 2.1rem);
 }
 
 .prototype-access {
@@ -2885,7 +2955,14 @@ footer {
   }
 
   .phone-stack {
-    min-height: 620px;
+    min-height: 590px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    gap: 1rem;
+  }
+
+  .phone-stack::after {
+    display: none;
   }
 }
 
@@ -3050,16 +3127,20 @@ footer {
   .phone-stack {
     min-height: auto;
     margin: 0 -5vw;
-    padding: 1rem 5vw 2rem;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 76vw;
+    padding: 2.6rem 5vw 2rem;
+    display: flex;
     gap: 1rem;
     overflow-x: auto;
     border-radius: 0;
     background: transparent;
+    scroll-padding-inline: 5vw;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+  }
+
+  .phone-stack::before,
+  .phone-stack::after {
+    display: none;
   }
 
   .phone-stack::-webkit-scrollbar {
@@ -3077,14 +3158,28 @@ footer {
     top: auto;
     right: auto;
     left: auto;
-    width: 100%;
+    flex: 0 0 76vw;
+    width: 76vw;
+    grid-column: auto;
+    grid-row: auto;
     transform: none;
     scroll-snap-align: center;
   }
 
-  .phone {
+  .phone,
+  .phone-a,
+  .phone-b,
+  .phone-c {
     border-width: 4px;
     border-radius: 22px;
+  }
+
+  .phone img {
+    aspect-ratio: 43 / 98;
+    border-width: 4px;
+    border-radius: 22px;
+    object-fit: cover;
+    object-position: top;
   }
 
   .sublet-engineering-head h4 {

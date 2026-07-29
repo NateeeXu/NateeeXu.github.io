@@ -6,7 +6,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  metadataBase: new URL("https://nate-xu-signal-path.natecece.chatgpt.site"),
+  metadataBase: new URL("https://nateeexu.github.io"),
   icons: {
     icon: "/favicon.svg",
   },

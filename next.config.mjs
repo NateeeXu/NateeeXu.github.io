@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isGitHubPagesBuild = process.env.GITHUB_PAGES === "true";
-
 const nextConfig = {
-  ...(isGitHubPagesBuild ? { output: "export" } : {}),
-  poweredByHeader: false,
-  compress: true,
+  // GitHub Pages serves static files only.
+  output: "export",
+  // Emit /zh/index.html so /zh/ resolves on GitHub Pages.
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },

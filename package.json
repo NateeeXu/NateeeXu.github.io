@@ -1,22 +1,15 @@
 {
-  "name": "nate-xu-signal-path",
-  "version": "1.0.0",
+  "name": "nate-xu-portfolio",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build && node scripts/prepare-sites-build.mjs",
-    "build:pages": "next build",
-    "start": "vinext start",
-    "lint": "next lint"
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "npx serve out"
   },
   "dependencies": {
     "next": "16.2.12",
     "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "vinext": "1.0.0-beta.4"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-rsc": "^0.5.30",
-    "esbuild": "^0.28.1"
+    "react-dom": "19.2.8"
   }
 }

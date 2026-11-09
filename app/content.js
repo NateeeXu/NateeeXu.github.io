@@ -47,8 +47,8 @@ const en = {
     primary: "View selected work",
     secondary: "Download résumé",
     readout: [
-      ["100", "beta users", "CloudSublet, two rounds"],
-      ["−60%", "reported issues", "between beta rounds"],
+      ["80", "beta users", "CloudSublet, two rounds"],
+      ["122", "test scenarios", "across both user roles"],
       ["4", "universities", "NU · UChicago · Berkeley · Yale"],
       ["95 MHz", "RISC-V CPU", "five-stage, on FPGA"],
     ],
@@ -66,10 +66,10 @@ const en = {
     lede:
       "A student-housing marketplace for international students at Northwestern, UChicago, UC Berkeley, and Yale.",
     metrics: [
-      ["100", "beta users across two rounds"],
-      ["−60%", "reported issues, round 1 → 2"],
-      ["< 4 h", "to fix newly found usability issues"],
-      ["4", "campus communities"],
+      ["80", "beta users across two rounds"],
+      ["122", "test scenarios across both user roles"],
+      ["13", "issues resolved after round two"],
+      ["5", "campuses at 4 universities"],
     ],
     body:
       "Students were hunting for sublets in fragmented group chats and social feeds: campuses mixed together, fields inconsistent, and phone numbers exposed too early. I defined the positioning, PRD, information architecture, and data model, then built it myself as a WeChat Mini Program on Tencent CloudBase.",
@@ -97,25 +97,25 @@ const en = {
       [
         "Beta discipline",
         "Two rounds, measured",
-        "Ran a 100-user, two-round beta. I diagnosed and shipped every fix myself, and reported issues fell 60% between rounds.",
+        "Ran two beta rounds with 80 users and 122 test scenarios. I diagnosed and shipped every fix myself, resolving 13 issues from the second round.",
       ],
       [
         "Built to last",
         "Quality as a system",
-        "Main package plus 9 feature subpackages, cloud functions with field whitelists, environment isolation, and 19 automated test files.",
+        "Main package plus 17 feature subpackages, 23 cloud functions with field whitelists, environment isolation, and 131 automated test files.",
       ],
     ],
   },
   digest: {
-    tag: "Independent developer · May – Jun 2026",
-    name: "AI Builders Digest",
+    tag: "Developer · May 2026 – now",
+    name: "Shining Builders",
     lede:
-      "A daily Chinese briefing that collects what AI builders are shipping, summarizes it with context, and delivers it every morning.",
+      "A free daily site that shows what AI builders are saying and which AI tools are gaining stars on GitHub.",
     body:
-      "I defined the target readers and content-selection criteria, then built a decoupled prepare → summarize → deliver pipeline. Feeds are gathered, summarized with an LLM into Chinese, and pushed to Feishu at 10:00 Beijing time by GitHub Actions.",
+      "I extended the open-source follow-builders project with summarize and deliver stages and a public website. Feeds from 34 AI builders become a Chinese digest for Lark, and since June 2026 GitHub Actions has rebuilt the site daily, ranking the top 120 AI tools from 18 keyword searches.",
     sources: ["X / posts", "YouTube", "RSS", "Podcasts"],
     stages: ["PREPARE", "SUMMARIZE", "DELIVER"],
-    output: ["10:00 CST", "今日 AI Builders", "Signal extracted, context kept."],
+    output: ["Updated daily", "Shining Builders", "Signal extracted, context kept."],
     links: [
       ["Project page", "digestPage"],
       ["Source on GitHub", "digestSource"],
@@ -131,14 +131,14 @@ const en = {
       {
         key: "PRODUCT",
         name: "Product",
-        metric: "100",
+        metric: "80",
         unit: "beta users",
         title: "CloudSublet",
         context: "Founder · 2026",
         points: [
           "WeChat Mini Program on Tencent CloudBase: data model, service layer, cloud functions",
           "Field whitelists, environment isolation, and migration preflight checks",
-          "Main package + 9 subpackages, 19 automated test files",
+          "Main package + 17 subpackages, 23 cloud functions, 131 automated test files",
         ],
         tags: ["JavaScript", "Node.js", "CloudBase"],
       },
@@ -279,8 +279,8 @@ const zh = {
     primary: "查看代表项目",
     secondary: "下载简历",
     readout: [
-      ["100", "内测用户", "CloudSublet 两轮内测"],
-      ["−60%", "问题反馈", "两轮内测之间"],
+      ["80", "内测用户", "CloudSublet 两轮内测"],
+      ["122", "测试场景", "覆盖转租方和求租方"],
       ["4", "所高校", "NU · UChicago · Berkeley · Yale"],
       ["95 MHz", "RISC-V CPU", "五级流水线，FPGA 实现"],
     ],
@@ -298,10 +298,10 @@ const zh = {
     alias: "寓见云居",
     lede: "面向留学生的校园转租平台，覆盖 Northwestern、UChicago、UC Berkeley 和 Yale。",
     metrics: [
-      ["100", "名用户参与两轮内测"],
-      ["−60%", "问题反馈（第一轮 → 第二轮）"],
-      ["< 4 h", "修复新发现的可用性问题"],
-      ["4", "个校园社区"],
+      ["80", "名用户参与两轮内测"],
+      ["122", "个测试场景，覆盖两类用户"],
+      ["13", "个问题在第二轮后解决"],
+      ["5", "个校区，分布在 4 所大学"],
     ],
     body:
       "留学生在微信群和小红书里找短租：信息碎片化、校区混杂、字段不统一，联系方式也过早暴露。我完成了产品定位、PRD、信息架构和数据模型，并亲自用微信小程序 + 腾讯云 CloudBase 把它做了出来。",
@@ -318,19 +318,19 @@ const zh = {
     decisions: [
       ["问题定义", "以校区为上下文", "把学校、区域、公寓别名和校车路线整合成一套发现系统，每条房源都放在它所服务的校区语境里看。"],
       ["信任设计", "联系方式放在最后", "双方真正有效沟通之后，才交换联系方式。平台不参与租金、押金和合同，并在产品里讲清楚这条边界。"],
-      ["内测方法", "两轮内测，用数据说话", "组织 100 人、两轮内测。所有问题都由我定位并修复，第二轮的问题反馈比第一轮下降 60%。"],
-      ["工程质量", "质量是一套系统", "主包加 9 个业务分包，云函数配字段白名单和环境隔离，19 个自动化测试文件。"],
+      ["内测方法", "两轮内测，用数据说话", "组织两轮内测，共 80 名用户、122 个测试场景。所有问题都由我定位并修复，解决了第二轮发现的 13 个问题。"],
+      ["工程质量", "质量是一套系统", "主包加 17 个业务分包，23 个云函数配字段白名单和环境隔离，131 个自动化测试文件。"],
     ],
   },
   digest: {
-    tag: "独立开发者 · 2026.05 – 2026.06",
-    name: "AI Builders 中文情报 Digest",
-    lede: "每日中文简报：收集 AI 构建者正在做的事，带上下文做摘要，每天早上自动推送。",
+    tag: "开发者 · 2026.05 至今",
+    name: "Shining Builders",
+    lede: "免费的每日网站：看 AI 构建者在说什么，以及哪些 AI 工具在 GitHub 上涨星最快。",
     body:
-      "我先定义了目标读者和内容筛选标准，再搭建 prepare → summarize → deliver 三段解耦的 pipeline：抓取信息源，用 LLM 生成中文摘要，每天北京时间 10 点由 GitHub Actions 推送到飞书。",
+      "我在开源项目 follow-builders 的基础上增加了摘要、推送环节和公开网站。34 位 AI 构建者的内容被整理成飞书中文简报；从 2026 年 6 月起，GitHub Actions 每天重建网站，并通过 18 组关键词搜索排出前 120 个 AI 工具。",
     sources: ["X / 推文", "YouTube", "RSS", "播客"],
     stages: ["PREPARE", "SUMMARIZE", "DELIVER"],
-    output: ["10:00 CST", "今日 AI Builders", "提取信号，保留上下文。"],
+    output: ["每日更新", "Shining Builders", "提取信号，保留上下文。"],
     links: [
       ["项目主页", "digestPage"],
       ["GitHub 源码", "digestSource"],
@@ -346,14 +346,14 @@ const zh = {
       {
         key: "PRODUCT",
         name: "产品",
-        metric: "100",
+        metric: "80",
         unit: "内测用户",
         title: "CloudSublet",
         context: "创始人 · 2026",
         points: [
           "基于腾讯云 CloudBase 的微信小程序：数据模型、服务层、云函数",
           "字段白名单、环境隔离与迁移预检工具",
-          "主包 + 9 个业务分包，19 个自动化测试文件",
+          "主包 + 17 个业务分包，23 个云函数，131 个自动化测试文件",
         ],
         tags: ["JavaScript", "Node.js", "CloudBase"],
       },

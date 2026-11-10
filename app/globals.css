@@ -27,6 +27,11 @@
 
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", var(--font-inter), "Helvetica Neue",
     "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  --display: var(--font-display), -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+  --serif: var(--font-serif), "Songti SC", "STSong", "SimSun", serif;
+  --mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, "PingFang SC", monospace;
+  --hand: var(--font-hand), "Kaiti SC", "STKaiti", "KaiTi", cursive;
 
   --max: 1120px;
   --gutter: clamp(20px, 4vw, 40px);
@@ -1373,6 +1378,189 @@ button {
 
 .footer-links a:hover {
   color: var(--ink);
+}
+
+/* ==========================================================================
+   Type roles: display for headlines and numbers, serif for accents,
+   mono for engineering figures, hand for margin notes
+   ========================================================================== */
+
+.brand,
+.hero h1,
+.section-head h2,
+.about-copy h2,
+.contact h2,
+.tile-title,
+.host-name,
+.host-stats dd,
+.specs dd,
+.stat dd,
+.card h4,
+.screens-head h4,
+.layer-body h3,
+.saviu-points h4 {
+  font-family: var(--display);
+  font-weight: 800;
+}
+
+.hero h1,
+.section-head h2,
+.about-copy h2,
+.contact h2,
+.tile-title {
+  letter-spacing: -0.045em;
+}
+
+.hero h1 .h1-serif {
+  font-family: var(--serif);
+  font-size: 1.06em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+:lang(zh) .hero h1 {
+  font-size: clamp(42px, 5.8vw, 76px);
+  line-height: 1.12;
+}
+
+:lang(zh) .hero h1 .h1-serif {
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.award-num {
+  font-family: var(--serif);
+  font-size: clamp(60px, 7vw, 88px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.award-num span {
+  font-family: var(--sans);
+}
+
+:lang(zh) .award-num {
+  font-size: clamp(42px, 4.6vw, 58px);
+  font-weight: 600;
+}
+
+.layer-metric strong,
+.layer-metric span,
+.layer-metric-inline,
+.chips li,
+.timeline time {
+  font-family: var(--mono);
+}
+
+.layer-metric strong,
+.layer-metric-inline strong {
+  letter-spacing: -0.06em;
+}
+
+.chips li {
+  font-size: 13px;
+  letter-spacing: -0.02em;
+}
+
+/* Handwritten notes */
+.note {
+  color: var(--brand-text);
+  font-family: var(--hand);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+:lang(zh) .note {
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.note svg {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.host {
+  position: relative;
+}
+
+.note-host {
+  position: absolute;
+  top: -46px;
+  left: -4px;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  transform: rotate(-5deg);
+}
+
+.note-host svg {
+  width: 44px;
+  height: 34px;
+  margin-bottom: -18px;
+}
+
+@media (max-width: 1023px) {
+  .host {
+    margin-top: 28px;
+  }
+}
+
+.screens-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 14px;
+}
+
+.note-inline {
+  white-space: nowrap;
+  transform: rotate(-2deg);
+}
+
+@media (max-width: 600px) {
+  .note-inline {
+    font-size: 21px;
+  }
+
+  :lang(zh) .note-inline {
+    font-size: 18px;
+  }
+}
+
+.note-award {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+  color: #ff6b85;
+  transform: rotate(-4deg);
+}
+
+.note-award svg {
+  width: 34px;
+  height: 26px;
+}
+
+/* CloudSublet logo in place of the text title */
+.tile-logo {
+  margin: 16px auto 18px;
+}
+
+.tile-logo img {
+  width: min(100%, 440px);
+  height: auto;
+  margin: 0 auto;
 }
 
 /* ==========================================================================

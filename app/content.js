@@ -100,6 +100,7 @@ const en = {
     card: {
       name: "Nate Xu",
       role: "Founder of CloudSublet",
+      note: "that’s me!",
       photoAlt: "Portrait of Nate Xu",
       stats: [
         ["80", "Beta users"],
@@ -128,7 +129,8 @@ const en = {
       "A student-housing marketplace for international students at Northwestern, UChicago, UC Berkeley, and Yale.",
     live: "Live on WeChat as 寓见云居",
     storyTitle: "Why I built it",
-    gallery: { title: "Every screen, explained", prev: "Previous screens", next: "Next screens" },
+    gallery: { title: "Every screen, explained", note: "straight from the app", prev: "Previous screens", next: "Next screens" },
+    logoAlt: "CloudSublet 寓见云居",
     metrics: [
       ["80", "beta users across two rounds"],
       ["122", "test scenarios across both user roles"],
@@ -175,6 +177,7 @@ const en = {
     name: "Saviu",
     lede: "After a disaster, cell towers go down, and the people who most need help are often the ones who can’t reply. Saviu helps State Farm find them first.",
     award: ["5th", "of 144 teams", "Honorable Mention, Spacetime Track"],
+    hackNote: "my first hackathon!",
     points: [
       ["Three connected portals", "State Farm sees every area ranked P0–P2 and dispatches adjusters. Adjusters get assigned and recommended visits on their phones. Customers get a message center built to plug into State Farm’s app."],
       ["Automatic escalation", "No reply to a text leads to a phone call within 6 hours, then an on-site adjuster and a 911 referral. Any reply stops it."],
@@ -357,6 +360,7 @@ const zh = {
     card: {
       name: "徐显策",
       role: "CloudSublet 创始人",
+      note: "就是我！",
       photoAlt: "徐显策的肖像",
       stats: [
         ["80", "内测用户"],
@@ -384,7 +388,8 @@ const zh = {
     lede: "面向留学生的校园转租平台，覆盖 Northwestern、UChicago、UC Berkeley 和 Yale。",
     live: "微信小程序「寓见云居」已上线",
     storyTitle: "为什么做它",
-    gallery: { title: "产品界面一览", prev: "上一组界面", next: "下一组界面" },
+    gallery: { title: "产品界面一览", note: "全部来自真实产品", prev: "上一组界面", next: "下一组界面" },
+    logoAlt: "CloudSublet 寓见云居",
     metrics: [
       ["80", "名用户参与两轮内测"],
       ["122", "个测试场景，覆盖两类用户"],
@@ -415,6 +420,7 @@ const zh = {
     name: "Saviu",
     lede: "灾害发生后信号塔倒塌，最需要帮助的人往往最没办法回复。Saviu 帮 State Farm 先找到这些人。",
     award: ["第 5 名", "共 144 支队伍", "Spacetime 赛道荣誉奖"],
+    hackNote: "我的第一次黑客松！",
     points: [
       ["三端联动", "State Farm 看到每个地区的 P0–P2 排序并向理赔员派单；理赔员在手机上接收派单和推荐任务；客户通过可接入 State Farm App 的消息中心沟通。"],
       ["自动升级", "短信没有回复，6 小时内转电话；仍无回复，就交给现场理赔员并上报 911。只要客户回复就撤销。"],

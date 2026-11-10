@@ -113,7 +113,7 @@ export default function Portfolio({ lang }) {
         <section className="hero">
           <div className="hero-copy">
             <h1>
-              <span>{t.hero.titleA}</span> <span>{t.hero.titleB}</span>
+              <span>{t.hero.titleA}</span> <span className="h1-serif">{t.hero.titleB}</span>
             </h1>
             <p className="hero-body">{t.hero.body}</p>
             <div className="actions">
@@ -123,6 +123,10 @@ export default function Portfolio({ lang }) {
           </div>
 
           <aside className="host" aria-label={card.name}>
+            <p className="note note-host">
+              <span>{card.note}</span>
+              <svg viewBox="0 0 44 34" aria-hidden="true"><path d="M3 6c14-2 26 6 30 22M27 22l6 7 5-8" /></svg>
+            </p>
             <div className="host-card">
               <div className="host-id">
                 <img className="avatar" src="/images/portrait.webp" width="1000" height="1000" alt={card.photoAlt} fetchPriority="high" />
@@ -155,7 +159,9 @@ export default function Portfolio({ lang }) {
           <article className="tile tile-cs">
             <header className="tile-head">
               <p className="tile-kicker">{cs.tag}</p>
-              <h3 className="tile-title">{cs.name}</h3>
+              <h3 className="tile-logo">
+                <img src="/images/cloudsublet-logo.png" width="1589" height="399" alt={cs.logoAlt} />
+              </h3>
               <p className="tile-lede">{cs.lede}</p>
               <p className="badge-live">
                 <span className="live-dot" aria-hidden="true" />
@@ -230,6 +236,10 @@ export default function Portfolio({ lang }) {
                   <Laurel flip />
                 </div>
                 <p className="award-label">{sv.award[2]}</p>
+                <p className="note note-award">
+                  <svg viewBox="0 0 34 26" aria-hidden="true"><path d="M30 22C20 22 10 16 6 5M2 11l4-7 6 5" /></svg>
+                  <span>{sv.hackNote}</span>
+                </p>
               </div>
             </div>
             <div className="saviu-points">

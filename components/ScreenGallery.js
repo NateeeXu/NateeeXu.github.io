@@ -46,7 +46,10 @@ export default function ScreenGallery({ screens, lang, labels }) {
   return (
     <div className="screens">
       <div className="screens-head">
-        <h4>{labels.title}</h4>
+        <div className="screens-title">
+          <h4>{labels.title}</h4>
+          {labels.note && <p className="note note-inline">{labels.note}</p>}
+        </div>
         <div className="screens-nav">
           <button type="button" aria-label={labels.prev} disabled={edge.start} onClick={() => page(-1)}>
             <Arrow dir="prev" />

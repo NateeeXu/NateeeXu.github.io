@@ -58,13 +58,14 @@ const en = {
     index: "01",
     label: "Selected work",
     title: "Products shipped to real users.",
-    body: "I start from a pain point I can see firsthand and carry it through positioning, PRD, interaction design, data model, implementation, and beta.",
+    body: "I start from a pain point I can see firsthand and carry it through positioning, PRD, interaction design, data model, implementation, beta, and launch.",
   },
   cloudsublet: {
     tag: "Founder · Product & Engineering Lead · May 2026 – now",
     name: "CloudSublet",
+    alias: "寓见云居",
     lede:
-      "A student-housing marketplace for international students at Northwestern, UChicago, UC Berkeley, and Yale.",
+      "A student-housing marketplace for international students at Northwestern, UChicago, UC Berkeley, and Yale. Live on WeChat as 寓见云居 since November 2026.",
     metrics: [
       ["80", "beta users across two rounds"],
       ["122", "test scenarios across both user roles"],
@@ -72,7 +73,7 @@ const en = {
       ["5", "campuses at 4 universities"],
     ],
     body:
-      "Students were hunting for sublets in fragmented group chats and social feeds: campuses mixed together, fields inconsistent, and phone numbers exposed too early. I defined the positioning, PRD, information architecture, and data model, then built it myself as a WeChat Mini Program on Tencent CloudBase.",
+      "Students were hunting for sublets in fragmented group chats and social feeds: campuses mixed together, fields inconsistent, and phone numbers exposed too early. I defined the positioning, PRD, information architecture, and data model, then built it myself as a WeChat Mini Program on Tencent CloudBase. I also built 3 user communities at Northwestern, Yale, and UC Berkeley, now 300+ members in total.",
     stack: ["WeChat Mini Program", "JavaScript", "Node.js", "Tencent CloudBase", "Cloud functions"],
     link: "Visit cloudsublet.com",
     flowTitle: "Trust flow",
@@ -97,7 +98,7 @@ const en = {
       [
         "Beta discipline",
         "Two rounds, measured",
-        "Ran two beta rounds with 80 users and 122 test scenarios. I diagnosed and shipped every fix myself, resolving 13 issues from the second round.",
+        "Ran two beta rounds with 80 users and 122 test scenarios. I diagnosed and shipped every fix myself, resolving 13 issues from the second round, then launched on WeChat in November 2026.",
       ],
       [
         "Built to last",
@@ -211,7 +212,7 @@ const en = {
       "Before building products I built audiences. I read engagement, reach, and completion data, then changed what I made because of it. The same loop now drives how I run product betas.",
     stats: [
       ["10K+", "Followers", "Own RedNote account"],
-      ["74K+", "Likes", "RedNote"],
+      ["77K+", "Likes", "RedNote"],
       ["500K+", "Views", "Top-performing post"],
       ["60+", "Brand partnerships", "Sponsored campaigns"],
       ["+20K", "Followers", "University Douyin, as video team lead"],
@@ -290,13 +291,13 @@ const zh = {
     index: "01",
     label: "代表项目",
     title: "交付给真实用户的产品。",
-    body: "我从亲眼看到的痛点出发，一路负责到底：产品定位、PRD、交互设计、数据模型、开发实现，直到内测。",
+    body: "我从亲眼看到的痛点出发，一路负责到底：产品定位、PRD、交互设计、数据模型、开发实现，再到内测和上线。",
   },
   cloudsublet: {
     tag: "创始人 · 产品与研发负责人 · 2026.05 至今",
     name: "CloudSublet",
     alias: "寓见云居",
-    lede: "面向留学生的校园转租平台，覆盖 Northwestern、UChicago、UC Berkeley 和 Yale。",
+    lede: "面向留学生的校园转租平台，覆盖 Northwestern、UChicago、UC Berkeley 和 Yale。微信小程序「寓见云居」已于 2026 年 11 月上线。",
     metrics: [
       ["80", "名用户参与两轮内测"],
       ["122", "个测试场景，覆盖两类用户"],
@@ -304,7 +305,7 @@ const zh = {
       ["5", "个校区，分布在 4 所大学"],
     ],
     body:
-      "留学生在微信群和小红书里找短租：信息碎片化、校区混杂、字段不统一，联系方式也过早暴露。我完成了产品定位、PRD、信息架构和数据模型，并亲自用微信小程序 + 腾讯云 CloudBase 把它做了出来。",
+      "留学生在微信群和小红书里找短租：信息碎片化、校区混杂、字段不统一，联系方式也过早暴露。我完成了产品定位、PRD、信息架构和数据模型，并亲自用微信小程序 + 腾讯云 CloudBase 把它做了出来。我还在 Northwestern、Yale 和 UC Berkeley 建立了 3 个用户社群，目前成员共 300 多人。",
     stack: ["微信小程序", "JavaScript", "Node.js", "腾讯云 CloudBase", "云函数"],
     link: "访问 cloudsublet.com",
     flowTitle: "信任流程",
@@ -318,7 +319,7 @@ const zh = {
     decisions: [
       ["问题定义", "以校区为上下文", "把学校、区域、公寓别名和校车路线整合成一套发现系统，每条房源都放在它所服务的校区语境里看。"],
       ["信任设计", "联系方式放在最后", "双方真正有效沟通之后，才交换联系方式。平台不参与租金、押金和合同，并在产品里讲清楚这条边界。"],
-      ["内测方法", "两轮内测，用数据说话", "组织两轮内测，共 80 名用户、122 个测试场景。所有问题都由我定位并修复，解决了第二轮发现的 13 个问题。"],
+      ["内测方法", "两轮内测，用数据说话", "组织两轮内测，共 80 名用户、122 个测试场景。所有问题都由我定位并修复，解决了第二轮发现的 13 个问题，之后于 2026 年 11 月在微信正式上线。"],
       ["工程质量", "质量是一套系统", "主包加 17 个业务分包，23 个云函数配字段白名单和环境隔离，131 个自动化测试文件。"],
     ],
   },
@@ -426,7 +427,7 @@ const zh = {
       "做产品之前，我先做过内容和受众。我会看互动、触达和完播数据，再据此调整内容。同样的闭环，现在用在了我带的产品内测上。",
     stats: [
       ["10K+", "粉丝", "个人小红书账号"],
-      ["74K+", "获赞", "小红书"],
+      ["77K+", "获赞", "小红书"],
       ["500K+", "浏览", "单篇最高"],
       ["60+", "品牌合作", "商单推广"],
       ["+20K", "粉丝增长", "校官方抖音，任视频组组长期间"],

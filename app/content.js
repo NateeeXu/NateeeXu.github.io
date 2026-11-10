@@ -10,14 +10,66 @@ export const links = {
   cloudsublet: "https://cloudsublet.com",
   digestSource: "https://github.com/NateeeXu/follow-builders-feishu",
   digestPage: "https://nateeexu.github.io/follow-builders-feishu/",
+  saviu: "https://github.com/NateeeXu/UTD_ZERODAY",
 };
 
-// Phone screenshots shown in the CloudSublet case study (public/images/*).
-// Leave empty to show only the trust-flow diagram.
-export const productShots = [
-  { src: "/images/app-home.webp", label: { en: "Campus home", zh: "校区首页" }, alt: { en: "CloudSublet home screen for Northwestern Evanston", zh: "CloudSublet 西北大学 Evanston 校区首页" } },
-  { src: "/images/app-map.webp", label: { en: "Shuttle map", zh: "校车地图" }, alt: { en: "CloudSublet campus shuttle map with listings along each route", zh: "CloudSublet 校园交通地图与沿线房源" } },
-  { src: "/images/app-chat.webp", label: { en: "Trusted chat", zh: "站内聊天" }, alt: { en: "CloudSublet chat with a locked contact-exchange step", zh: "CloudSublet 聊天页，联系方式交换处于锁定状态" } },
+// Every CloudSublet screen from the product portfolio, shown in the swipeable gallery (public/images/screens/*).
+export const appScreens = [
+  {
+    src: "/images/screens/01.jpg",
+    title: { en: "Home and role-based entry points", zh: "首页与双角色入口" },
+    body: { en: "The home page brings together campus-based search and two paths: finding a home and listing a sublet. Area listings, recommendations and housing requests help users enter the relevant browsing or publishing flow.", zh: "以当前校区为入口，提供房源搜索、“我要租房”与“我要转租”两类操作；通过区域房源、推荐与求租入口，连接找房和发布需求。" },
+  },
+  {
+    src: "/images/screens/02.jpg",
+    title: { en: "Listing creation and information entry", zh: "房源发布与信息录入" },
+    body: { en: "A step-by-step form collects the apartment, campus, address, area, transfer type and pricing. Apartment matching and address-completion guidance help organize listing information, with options to save a draft or continue.", zh: "通过分步表单录入公寓、校区、地址、区域、转租类型及价格；提供公寓匹配与地址补全提示，以及保存草稿、下一步入口，用于整理发布信息。" },
+  },
+  {
+    src: "/images/screens/03.jpg",
+    title: { en: "Listings and search filters", zh: "房源列表与条件筛选" },
+    body: { en: "Listings are organized by the selected campus and shuttle routes, with rent, dates, area and verification status shown together. Search, favorites and filters support browsing, alongside an entry point for a content-submission campaign.", zh: "按当前学校及校车线路组织房源，集中展示租金、租期、区域与认证状态；提供搜索、收藏和筛选入口，并展示内容投稿活动入口。" },
+  },
+  {
+    src: "/images/screens/04.jpg",
+    title: { en: "Listing details and inquiry entry points", zh: "房源详情与咨询入口" },
+    body: { en: "The detail page presents photos, pricing, dates, address, layout and shuttle coverage for one listing. Users can save the listing, view its location, share it or start an in-app inquiry.", zh: "通过图片轮播、价格、租期、地址、房型及校车覆盖信息介绍单套房源；用户可收藏、查看地图、分享房源，或进入站内咨询。" },
+  },
+  {
+    src: "/images/screens/05.jpg",
+    title: { en: "Housing requests and notifications", zh: "求租需求与订阅提醒" },
+    body: { en: "Housing-request cards show the campus, budget, move-in dates and preferred layout, helping listing owners understand demand. Users can filter requests, open details and enable notifications for new requests.", zh: "集中展示求租者的学校、预算、入住时间及偏好户型，供转租者了解需求；提供筛选、详情查看与新需求通知入口。" },
+  },
+  {
+    src: "/images/screens/06.jpg",
+    title: { en: "In-app inquiries and contact exchange", zh: "站内咨询与联系方式交换" },
+    body: { en: "The chat connects an inquiry to its listing and displays conversation history and message status. The contact-exchange area shows the number of conversation rounds and the other user’s identity-verification status.", zh: "围绕关联房源开展站内咨询，保留历史消息并展示发送状态；联系方式交换入口展示沟通轮次与对方身份认证状态。" },
+  },
+  {
+    src: "/images/screens/07.jpg",
+    title: { en: "Sharing copy and campaign entry points", zh: "分享文案与活动入口" },
+    body: { en: "Listing information is formatted as sharing copy for WeChat groups or RedNote. Users can choose a writing style, preview the content and copy the title and body. The page also includes a reminder to add genuine experience and a campaign entry point.", zh: "将房源信息整理成微信群或小红书分享文案，支持选择写法、预览并复制标题与正文；同时展示添加真实体验的提示及投稿活动入口。" },
+  },
+  {
+    src: "/images/screens/08.jpg",
+    title: { en: "Campus transit and listings along shuttle routes", zh: "校园交通与沿线房源" },
+    body: { en: "The map displays campus shuttle routes, vehicle online status and location markers, with controls to switch routes. A linked list of homes along the routes lets users consider commuting options while browsing.", zh: "在地图上展示校车线路、车辆在线状态与位置标记，支持切换线路；底部连接沿线房源列表，供用户结合通勤条件查看房源。" },
+  },
+  {
+    src: "/images/screens/09.jpg",
+    title: { en: "Local living guides", zh: "本地生活内容" },
+    body: { en: "A series of local guides covers topics such as seasonal clothing and nearby cafes and dessert shops. Expandable articles provide information about everyday life around campus beyond the housing search.", zh: "按期展示校园周边生活指南，涵盖穿衣建议、咖啡甜品等主题；支持展开与收起文章，为用户提供租房之外的本地生活信息。" },
+  },
+  {
+    src: "/images/screens/10.jpg",
+    title: { en: "User profile and verification", zh: "用户主页与身份展示" },
+    body: { en: "The profile shows the user’s avatar, student-verification status, join date, listings and housing requests. Profile editing and privacy settings sit alongside a consolidated view of the user’s published content.", zh: "展示用户头像、学生认证状态、加入时间及已发布的房源与求租信息；提供编辑主页和隐私设置入口，集中呈现用户资料与发布记录。" },
+  },
+  {
+    src: "/images/screens/11.jpg",
+    title: { en: "Account center and service management", zh: "个人中心与服务管理" },
+    body: { en: "The account center brings together listings, housing requests, favorites and browsing history. It also provides access to notifications, contact and privacy settings, review status, rewards, feedback and customer support.", zh: "集中管理我的房源、求租、收藏与浏览记录；提供通知、联系方式与隐私、审核、福利及反馈客服等入口，用于管理内容与账户服务。" },
+  },
 ];
 
 const en = {
@@ -39,25 +91,33 @@ const en = {
   switchAria: "切换到中文",
   resume: "Résumé",
   hero: {
-    status: "Evanston, IL · M.S. EE @ Northwestern · open to 2027 roles",
     titleA: "Product builder,",
     titleB: "from silicon to software.",
     body:
       "I’m Nate Xu, founder of CloudSublet. I turn messy real-world problems into shipped products and own both the product decisions and the code. My background is hardware (RISC-V CPUs, FPGA data paths, a mixed-signal tape-out), so I can go all the way down the stack when the problem needs it.",
     primary: "View selected work",
     secondary: "Download résumé",
-    readout: [
-      ["80", "beta users", "CloudSublet, two rounds"],
-      ["122", "test scenarios", "across both user roles"],
-      ["4", "universities", "NU · UChicago · Berkeley · Yale"],
-      ["95 MHz", "RISC-V CPU", "five-stage, on FPGA"],
-    ],
-    caption: ["NATE XU / 徐显策", "SIG 0x4E58"],
+    card: {
+      name: "Nate Xu",
+      role: "Founder of CloudSublet",
+      photoAlt: "Portrait of Nate Xu",
+      stats: [
+        ["80", "Beta users"],
+        ["5th", "of 144 at HackUTD"],
+        ["95 MHz", "RISC-V CPU"],
+      ],
+      facts: [
+        ["school", "Studying M.S. EE at Northwestern"],
+        ["pin", "Lives in Evanston, IL"],
+        ["language", "Speaks English and Chinese"],
+        ["work", "Open to 2027 product, software, and hardware roles"],
+      ],
+    },
   },
   work: {
     index: "01",
     label: "Selected work",
-    title: "Products shipped to real users.",
+    title: "Built end to end.",
     body: "I start from a pain point I can see firsthand and carry it through positioning, PRD, interaction design, data model, implementation, beta, and launch.",
   },
   cloudsublet: {
@@ -65,7 +125,10 @@ const en = {
     name: "CloudSublet",
     alias: "寓见云居",
     lede:
-      "A student-housing marketplace for international students at Northwestern, UChicago, UC Berkeley, and Yale. Live on WeChat as 寓见云居 since November 2026.",
+      "A student-housing marketplace for international students at Northwestern, UChicago, UC Berkeley, and Yale.",
+    live: "Live on WeChat as 寓见云居",
+    storyTitle: "Why I built it",
+    gallery: { title: "Every screen, explained", prev: "Previous screens", next: "Next screens" },
     metrics: [
       ["80", "beta users across two rounds"],
       ["122", "test scenarios across both user roles"],
@@ -107,6 +170,18 @@ const en = {
       ],
     ],
   },
+  saviu: {
+    tag: "Product & Full-Stack Developer · HackUTD 2026",
+    name: "Saviu",
+    lede: "After a disaster, cell towers go down, and the people who most need help are often the ones who can’t reply. Saviu helps State Farm find them first.",
+    award: ["5th", "of 144 teams", "Honorable Mention, Spacetime Track"],
+    points: [
+      ["Three connected portals", "State Farm sees every area ranked P0–P2 and dispatches adjusters. Adjusters get assigned and recommended visits on their phones. Customers get a message center built to plug into State Farm’s app."],
+      ["Automatic escalation", "No reply to a text leads to a phone call within 6 hours, then an on-site adjuster and a 911 referral. Any reply stops it."],
+      ["Tested at scale", "Built on 50,000+ simulated households. In a simulated 30,000-household earthquake, households accounted for within 72 hours rose from 8,981 with no staff to 27,598 with staff."],
+    ],
+    link: "View on GitHub",
+  },
   digest: {
     tag: "Developer · May 2026 – now",
     name: "Shining Builders",
@@ -115,7 +190,7 @@ const en = {
     body:
       "I extended the open-source follow-builders project with summarize and deliver stages and a public website. Feeds from 34 AI builders become a Chinese digest for Lark, and since June 2026 GitHub Actions has rebuilt the site daily, ranking the top 120 AI tools from 18 keyword searches.",
     sources: ["X / posts", "YouTube", "RSS", "Podcasts"],
-    stages: ["PREPARE", "SUMMARIZE", "DELIVER"],
+    stages: ["Prepare", "Summarize", "Deliver"],
     output: ["Updated daily", "Shining Builders", "Signal extracted, context kept."],
     links: [
       ["Project page", "digestPage"],
@@ -211,8 +286,8 @@ const en = {
     body:
       "Before building products I built audiences. I read engagement, reach, and completion data, then changed what I made because of it. The same loop now drives how I run product betas.",
     stats: [
-      ["10K+", "Followers", "Own RedNote account"],
-      ["77K+", "Likes", "RedNote"],
+      ["10K+", "Followers", "Main RedNote account"],
+      ["77K+", "Likes and saves", "Main RedNote account"],
       ["500K+", "Views", "Top-performing post"],
       ["60+", "Brand partnerships", "Sponsored campaigns"],
       ["+20K", "Followers", "University Douyin, as video team lead"],
@@ -242,6 +317,7 @@ const en = {
   contact: {
     eyebrow: "Open to product, software, and hardware roles for 2027",
     title: "Building something ambitious? Let’s talk.",
+    emailCta: "Email me",
     links: [
       ["Email", "email"],
       ["GitHub", "github"],
@@ -272,32 +348,43 @@ const zh = {
   switchAria: "Switch to English",
   resume: "简历",
   hero: {
-    status: "Evanston, IL · Northwestern 电子工程硕士 · 寻找 2027 机会",
     titleA: "产品构建者，",
     titleB: "从芯片到软件。",
     body:
       "我是徐显策（Nate Xu），CloudSublet 创始人。我把真实世界里混乱的问题做成能上线的产品，产品决策和代码都由我负责。我是硬件出身，做过 RISC-V CPU、FPGA 数据通路和混合信号流片，所以需要的时候可以一路下探到底层。",
     primary: "查看代表项目",
     secondary: "下载简历",
-    readout: [
-      ["80", "内测用户", "CloudSublet 两轮内测"],
-      ["122", "测试场景", "覆盖转租方和求租方"],
-      ["4", "所高校", "NU · UChicago · Berkeley · Yale"],
-      ["95 MHz", "RISC-V CPU", "五级流水线，FPGA 实现"],
-    ],
-    caption: ["NATE XU / 徐显策", "SIG 0x4E58"],
+    card: {
+      name: "徐显策",
+      role: "CloudSublet 创始人",
+      photoAlt: "徐显策的肖像",
+      stats: [
+        ["80", "内测用户"],
+        ["第 5 名", "HackUTD 144 支队伍"],
+        ["95 MHz", "RISC-V CPU"],
+      ],
+      facts: [
+        ["school", "Northwestern 电子工程硕士在读"],
+        ["pin", "现居 Evanston, IL"],
+        ["language", "会说中文和英文"],
+        ["work", "寻找 2027 年产品、软件与硬件机会"],
+      ],
+    },
   },
   work: {
     index: "01",
     label: "代表项目",
-    title: "交付给真实用户的产品。",
+    title: "端到端，亲手做出来。",
     body: "我从亲眼看到的痛点出发，一路负责到底：产品定位、PRD、交互设计、数据模型、开发实现，再到内测和上线。",
   },
   cloudsublet: {
     tag: "创始人 · 产品与研发负责人 · 2026.05 至今",
     name: "CloudSublet",
     alias: "寓见云居",
-    lede: "面向留学生的校园转租平台，覆盖 Northwestern、UChicago、UC Berkeley 和 Yale。微信小程序「寓见云居」已于 2026 年 11 月上线。",
+    lede: "面向留学生的校园转租平台，覆盖 Northwestern、UChicago、UC Berkeley 和 Yale。",
+    live: "微信小程序「寓见云居」已上线",
+    storyTitle: "为什么做它",
+    gallery: { title: "产品界面一览", prev: "上一组界面", next: "下一组界面" },
     metrics: [
       ["80", "名用户参与两轮内测"],
       ["122", "个测试场景，覆盖两类用户"],
@@ -323,6 +410,18 @@ const zh = {
       ["工程质量", "质量是一套系统", "主包加 17 个业务分包，23 个云函数配字段白名单和环境隔离，131 个自动化测试文件。"],
     ],
   },
+  saviu: {
+    tag: "产品与全栈开发 · HackUTD 2026",
+    name: "Saviu",
+    lede: "灾害发生后信号塔倒塌，最需要帮助的人往往最没办法回复。Saviu 帮 State Farm 先找到这些人。",
+    award: ["第 5 名", "共 144 支队伍", "Spacetime 赛道荣誉奖"],
+    points: [
+      ["三端联动", "State Farm 看到每个地区的 P0–P2 排序并向理赔员派单；理赔员在手机上接收派单和推荐任务；客户通过可接入 State Farm App 的消息中心沟通。"],
+      ["自动升级", "短信没有回复，6 小时内转电话；仍无回复，就交给现场理赔员并上报 911。只要客户回复就撤销。"],
+      ["规模化模拟", "基于 5 万多条模拟住户数据。在模拟的 3 万户地震场景中，72 小时内确认状况的住户从无人员时的 8,981 户提升到 27,598 户。"],
+    ],
+    link: "在 GitHub 查看",
+  },
   digest: {
     tag: "开发者 · 2026.05 至今",
     name: "Shining Builders",
@@ -330,7 +429,7 @@ const zh = {
     body:
       "我在开源项目 follow-builders 的基础上增加了摘要、推送环节和公开网站。34 位 AI 构建者的内容被整理成飞书中文简报；从 2026 年 6 月起，GitHub Actions 每天重建网站，并通过 18 组关键词搜索排出前 120 个 AI 工具。",
     sources: ["X / 推文", "YouTube", "RSS", "播客"],
-    stages: ["PREPARE", "SUMMARIZE", "DELIVER"],
+    stages: ["准备", "摘要", "推送"],
     output: ["每日更新", "Shining Builders", "提取信号，保留上下文。"],
     links: [
       ["项目主页", "digestPage"],
@@ -426,8 +525,8 @@ const zh = {
     body:
       "做产品之前，我先做过内容和受众。我会看互动、触达和完播数据，再据此调整内容。同样的闭环，现在用在了我带的产品内测上。",
     stats: [
-      ["10K+", "粉丝", "个人小红书账号"],
-      ["77K+", "获赞", "小红书"],
+      ["10K+", "粉丝", "小红书主账号"],
+      ["77K+", "赞藏", "小红书主账号"],
       ["500K+", "浏览", "单篇最高"],
       ["60+", "品牌合作", "商单推广"],
       ["+20K", "粉丝增长", "校官方抖音，任视频组组长期间"],
@@ -457,6 +556,7 @@ const zh = {
   contact: {
     eyebrow: "寻找 2027 年产品、软件与硬件方向的机会",
     title: "有一个有野心的项目？聊聊吧。",
+    emailCta: "给我发邮件",
     links: [
       ["邮箱", "email"],
       ["GitHub", "github"],

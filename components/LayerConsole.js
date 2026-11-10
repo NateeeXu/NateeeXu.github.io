@@ -1,8 +1,17 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
+import Icon from "./Icon";
 
-// Segmented control + detail card, following the WAI-ARIA tabs pattern:
+const layerIcons = {
+  PRODUCT: "phone",
+  SYSTEM: "chip",
+  ARCHITECTURE: "pipeline",
+  CIRCUIT: "wave",
+  DEVICE: "transistor",
+};
+
+// Category bar + detail card, following the WAI-ARIA tabs pattern:
 // arrow keys move between layers, Home/End jump to the ends.
 export default function LayerConsole({ layers, label }) {
   const [active, setActive] = useState(0);
@@ -33,12 +42,13 @@ export default function LayerConsole({ layers, label }) {
 
   return (
     <div className="layers">
-      <div className="segmented" role="tablist" aria-label={label} onKeyDown={onKeyDown}>
+      <div className="categories" role="tablist" aria-label={label} onKeyDown={onKeyDown}>
         {layers.map((item, index) => (
           <button
             key={item.key}
             ref={(el) => (tabs.current[index] = el)}
             id={`${id}-tab-${index}`}
+            className="category"
             role="tab"
             type="button"
             aria-selected={active === index}
@@ -46,42 +56,47 @@ export default function LayerConsole({ layers, label }) {
             tabIndex={active === index ? 0 : -1}
             onClick={() => setActive(index)}
           >
-            {item.name}
+            <Icon name={layerIcons[item.key]} size={26} />
+            <span>{item.name}</span>
           </button>
         ))}
       </div>
 
-      <div className="bezel layer-card">
-        <div
-          id={`${id}-panel`}
-          className={`core layer-panel${layer.image ? " has-image" : ""}`}
-          role="tabpanel"
-          aria-labelledby={`${id}-tab-${active}`}
-          tabIndex={0}
-        >
-          <div key={layer.key} className="layer-body">
+      <div
+        id={`${id}-panel`}
+        className="layer-card"
+        role="tabpanel"
+        aria-labelledby={`${id}-tab-${active}`}
+        tabIndex={0}
+      >
+        <div key={`${layer.key}-stage`} className={`layer-stage${layer.image ? " has-image" : ""}`}>
+          {layer.image ? (
+            <img src={layer.image.src} width={layer.image.width} height={layer.image.height} alt={layer.image.alt} loading="lazy" decoding="async" />
+          ) : (
             <p className="layer-metric">
               <strong>{layer.metric}</strong>
               <span>{layer.unit}</span>
             </p>
-            <h3>{layer.title}</h3>
-            <p className="layer-context">{layer.context}</p>
-            <ul className="layer-points">
-              {layer.points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-            <ul className="chips">
-              {layer.tags.map((tag) => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
-          </div>
-          {layer.image && (
-            <figure key={`${layer.key}-img`} className="layer-image">
-              <img src={layer.image.src} width={layer.image.width} height={layer.image.height} alt={layer.image.alt} loading="lazy" decoding="async" />
-            </figure>
           )}
+        </div>
+        <div key={layer.key} className="layer-body">
+          {layer.image && (
+            <p className="layer-metric-inline">
+              <strong>{layer.metric}</strong> <span>{layer.unit}</span>
+            </p>
+          )}
+          <h3>{layer.title}</h3>
+          <p className="layer-context">{layer.context}</p>
+          <ul className="layer-points">
+            {layer.points.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+          <ul className="chips">
+            {layer.tags.map((tag) => (
+              <li key={tag}>{tag}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

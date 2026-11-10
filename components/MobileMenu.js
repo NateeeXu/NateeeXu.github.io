@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Hamburger that morphs into an X and opens a full-screen glass menu.
+// Hamburger that morphs into an X and opens a full-screen menu sheet.
 // Only rendered visibly below the mobile breakpoint (see .menu-toggle in CSS).
 export default function MobileMenu({ items, lang, resume, labels }) {
   const [open, setOpen] = useState(false);
@@ -51,11 +51,11 @@ export default function MobileMenu({ items, lang, resume, labels }) {
           ))}
         </ul>
         <div className="menu-actions" style={{ "--i": items.length }}>
-          <a className="pill pill-ghost" href={lang.href} hrefLang={lang.hrefLang} aria-label={lang.aria}>
-            <span>{lang.label}</span>
+          <a className="btn btn-ghost" href={lang.href} hrefLang={lang.hrefLang} aria-label={lang.aria}>
+            {lang.label}
           </a>
-          <a className="pill pill-primary" href={resume.href} target="_blank" rel="noreferrer">
-            <span>{resume.label}</span>
+          <a className="btn btn-brand" href={resume.href} target="_blank" rel="noreferrer">
+            {resume.label}
           </a>
         </div>
       </div>

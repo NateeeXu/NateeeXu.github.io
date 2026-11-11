@@ -156,7 +156,7 @@ export default function Portfolio({ lang }) {
         <section className="section section-mist" id="work">
           <SectionHead title={t.work.title} body={t.work.body} />
 
-          <article className="tile tile-cs">
+          <article className="tile tile-cs" id="cloudsublet">
             <header className="tile-head">
               <p className="tile-kicker">{cs.tag}</p>
               <h3 className="tile-logo">
@@ -171,6 +171,14 @@ export default function Portfolio({ lang }) {
                 <a className="btn btn-brand" href={links.cloudsublet} target="_blank" rel="noreferrer">
                   {cs.link}
                 </a>
+                <figure className="mp-code">
+                  <img src="/images/miniprogram-code.png" width="360" height="360" alt={cs.qr.alt} loading="lazy" decoding="async" />
+                  <figcaption>
+                    {cs.qr.lines[0]}
+                    <br />
+                    {cs.qr.lines[1]}
+                  </figcaption>
+                </figure>
               </div>
             </header>
             <ScreenGallery screens={appScreens} lang={lang} labels={cs.gallery} />

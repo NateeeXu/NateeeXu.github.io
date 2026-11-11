@@ -141,6 +141,7 @@ const en = {
       "Students were hunting for sublets in fragmented group chats and social feeds: campuses mixed together, fields inconsistent, and phone numbers exposed too early. I defined the positioning, PRD, information architecture, and data model, then built it myself as a WeChat Mini Program on Tencent CloudBase. I also built 3 user communities at Northwestern, Yale, and UC Berkeley, now 300+ members in total.",
     stack: ["WeChat Mini Program", "JavaScript", "Node.js", "Tencent CloudBase", "Cloud functions"],
     link: "Visit cloudsublet.com",
+    qr: { alt: "WeChat mini program code for 寓见云居", lines: ["Scan in WeChat", "to open 寓见云居"] },
     flowTitle: "Trust flow",
     flow: [
       ["VERIFY", "Student identity signal"],
@@ -400,6 +401,7 @@ const zh = {
       "留学生在微信群和小红书里找短租：信息碎片化、校区混杂、字段不统一，联系方式也过早暴露。我完成了产品定位、PRD、信息架构和数据模型，并亲自用微信小程序 + 腾讯云 CloudBase 把它做了出来。我还在 Northwestern、Yale 和 UC Berkeley 建立了 3 个用户社群，目前成员共 300 多人。",
     stack: ["微信小程序", "JavaScript", "Node.js", "腾讯云 CloudBase", "云函数"],
     link: "访问 cloudsublet.com",
+    qr: { alt: "寓见云居微信小程序码", lines: ["微信扫码", "打开「寓见云居」"] },
     flowTitle: "信任流程",
     flow: [
       ["VERIFY", "学生身份验证"],

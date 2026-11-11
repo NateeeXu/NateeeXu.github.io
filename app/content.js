@@ -8,8 +8,8 @@ export const links = {
   resumeProduct: "/Nate_Xu_Resume_Product.pdf",
   resumeHardware: "/Nate_Xu_Resume_Hardware_IC.pdf",
   cloudsublet: "https://cloudsublet.com",
-  digestSource: "https://github.com/NateeeXu/follow-builders-feishu",
-  digestPage: "https://nateeexu.github.io/follow-builders-feishu/",
+  digestSource: "https://github.com/NateeeXu/Shining_Builders",
+  digestPage: "https://nateeexu.github.io/Shining_Builders/",
   saviu: "https://github.com/NateeeXu/UTD_ZERODAY",
 };
 
